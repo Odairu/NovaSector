@@ -24,6 +24,13 @@
 	resetspell.Grant(hydra)
 	resetspell.owner = hydra
 
+/datum/quirk/hydra/remove()
+	head_spell.Remove(quirk_holder)
+	reset_spell.Remove(quirk_holder)
+	QDEL_NULL(head_spell)
+	QDEL_NULL(reset_spell)
+	quirk_holder.real_name = original_name
+
 /datum/action/innate/hydra
 	name = "Switch head"
 	desc = "Switch between each of the heads on your body."
